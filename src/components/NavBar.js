@@ -25,13 +25,6 @@ const NavBar = () => {
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const toggle = () => setIsOpen(!isOpen);
 
-  React.useEffect(() => {
-    if (isAuthenticated) {
-      window.location.pathname("/externl-api");
-      return;
-    }
-  }, [isAuthenticated]);
-
   const logoutWithRedirect = () =>
     logout({
       logoutParams: {
